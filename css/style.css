@@ -54,7 +54,7 @@ h5{
     margin-left: 135px;
 }
 .header .profile a{
-    display: block;
+    display: inline-block;
     background: url(../img/img-c-portrait-1804963_1920.png) no-repeat;
     background-size: contain;
     width: 151px;
@@ -198,8 +198,7 @@ h5{
     height: 620px;
 }
 /* experience : 時間軸(border)、時間點(圖片) */
-.exp-time-border,
-.exp-time-dot{
+.exp-time-border, .exp-time-dot{
     position: absolute;
     left: 50%;
     transform: translate(-50%, 5px);

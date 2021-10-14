@@ -46,15 +46,11 @@ h5{
     background: url(../img/img-headerShape.png) no-repeat;
     background-size: 100% auto;
     padding-top: 125px;
-}
-.header{
     display: flex;
 }
 /* header : info */
 .header .profile{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
     margin-left: 135px;
 }
 .header .profile a{
@@ -146,9 +142,6 @@ h5{
 }
 
 /* content : skills */
-.skills{
-    margin: 0 auto;
-}
 .skills-menu{
     display: flex;
     justify-content: center;
@@ -159,8 +152,6 @@ h5{
     border-bottom: 6px solid #f58d23;
     border-radius: 6px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
     text-align: center;
     padding: 25px 1% 35px 1%;
     margin: 0 1% 10px 1%;
@@ -171,24 +162,15 @@ h5{
 .skills-item h3{
     margin: 23px 0 26px 0;
 }
-.skills-item-detail{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
 .skills-item-detail li{
-    display: flex;
-}
-.skills-item-detail li:before{
-    display: inline;
-    content: "•";
-    font-size: 5pt;
-    margin-right: 20px;
-}
-.skills-item-detail li p{
     font-size: 10px;
     line-height: 1.4;
     text-align: left;
+}
+.skills-item-detail li:before{
+    content: "•";
+    font-size: 5pt;
+    margin-right: 20px;
 }
 .border-green{
     border-color: #539E43;
@@ -216,45 +198,37 @@ h5{
     height: 620px;
 }
 /* experience : 時間軸(border)、時間點(圖片) */
-.exp-timeline-border-1,
-.exp-timeline-border-2,
-.exp-timeline-dot-start,
-.exp-timeline-dot-1,
-.exp-timeline-dot-2,
-.exp-timeline-dot-3{
+.exp-time-border,
+.exp-time-dot{
     position: absolute;
     left: 50%;
     transform: translate(-50%, 5px);
 }
-.exp-timeline-border-2{
+.exp-time-border-2{
     height: 100%;
     border-right: 2px solid #d8d8d8;
     top: 0;
 }
-.exp-timeline-border-1{
+.exp-time-border-1{
     width: 46px;
     border-bottom: 4px solid #d8d8d8;
     border-radius: 4px;
     bottom: 0;
 }
-.exp-timeline-dot-3{
+.exp-time-dot-3{
     top: 85px;
 }
-.exp-timeline-dot-2{
+.exp-time-dot-2{
     top: 260px;
 }
-.exp-timeline-dot-1{
+.exp-time-dot-1{
     top: 435px;
 }
-.exp-timeline-dot-1:hover,
-.exp-timeline-dot-2:hover,
-.exp-timeline-dot-3:hover{
+.exp-time-dot:hover{
     cursor: pointer;
 }
 /* experience : inforamtion */
-.exp-timeline-box-1,
-.exp-timeline-box-2,
-.exp-timeline-box-3{
+.exp-time-box{
     width: 30%;
     border: 1px solid #fb56bf;
     border-radius: 10px;
@@ -262,16 +236,16 @@ h5{
     padding: 8px 9px 12px 12px;
     position: absolute;
 }
-.exp-timeline-box-3{
+.exp-time-box-3{
     top: 83px;
     left: 53%;
 }
-.exp-timeline-box-2{
+.exp-time-box-2{
     top: 258px;
     right: 53%;
     text-align: right;
 }
-.exp-timeline-box-1{
+.exp-time-box-1{
     top: 433px;
     left: 53%;
 }
@@ -305,22 +279,16 @@ h5{
 }
 /* content : experience : media */
 @media (max-width: 767px){
-    .exp-timeline-border-1,
-    .exp-timeline-border-2,
-    .exp-timeline-dot-start,
-    .exp-timeline-dot-1,
-    .exp-timeline-dot-2,
-    .exp-timeline-dot-3{
+    .exp-time-border,
+    .exp-time-dot{
         left: 20%;
     }
-    .exp-timeline-box-1,
-    .exp-timeline-box-2,
-    .exp-timeline-box-3{
+    .exp-time-box{
         left: 23%;
         width: 200px;
         width: 55%;
     }
-    .exp-timeline-box-2{
+    .exp-time-box-2{
         text-align: left;
     }
 }
@@ -337,7 +305,6 @@ h5{
     overflow: hidden;
     border-radius: 4px;
     background: white;
-    width: 31.33%;
     width: 28%;
     margin: 0 1% 10px 1%;
 }
@@ -423,7 +390,6 @@ h5{
     background-size: cover;
 }
 .footer p{
-    font-size: 16px;
     text-align: center;
     padding: 34px 0 32px 0;
 }

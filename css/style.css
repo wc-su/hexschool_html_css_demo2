@@ -191,40 +191,66 @@ h5{
 
 /* content : experience */
 .experience{
-   margin-top: 125px;
+    width: 90%;
+    margin: 125px auto 0 auto; 
 }
 .exp-timeline{
-    position: relative;
-    height: 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-/* experience : 時間軸(border)、時間點(圖片) */
-.exp-time-border, .exp-time-dot{
+/* 時間軸 起始點 */
+.exp-timeline::before{
+    content: url(../img/dot-start.png);
+    display: block;
+}
+/* 時間軸 底線 */
+.exp-timeline::after{
+    content: "";
+    display: block;
+    width: 46px;
+    border: 2px solid #d8d8d8;
+    border-radius: 4px;
+}
+.exp-timeline ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 30px;
+}
+/* 時間軸 中線 */
+.exp-timeline ul::before{
+    content: "";
+    position: absolute;
+    height: calc(100% + 5px);
+    left: 50%;
+    transform: translate(-50%, -5px);
+    border: 1px solid #d8d8d8;
+}
+.exp-timeline ul li{
+    display: flex;
+    margin: 10px 0;
+}
+.exp-timeline ul li:nth-child(odd){
+    justify-content: flex-end;
+}
+.exp-timeline ul li:nth-child(even){
+    justify-content: flex-start;
+    text-align: right;
+}
+/* 時間軸 時間點 */
+.exp-timeline ul li::before{
+    content: url(../img/dot-timeItem.png);
     position: absolute;
     left: 50%;
     transform: translate(-50%, 5px);
 }
-.exp-time-border-2{
-    height: 100%;
-    border-right: 2px solid #d8d8d8;
-    top: 0;
+.exp-timeline ul li:nth-child(odd) .exp-time-box{
+    margin-right: 12%;
 }
-.exp-time-border-1{
-    width: 46px;
-    border-bottom: 4px solid #d8d8d8;
-    border-radius: 4px;
-    bottom: 0;
-}
-.exp-time-dot-3{
-    top: 85px;
-}
-.exp-time-dot-2{
-    top: 260px;
-}
-.exp-time-dot-1{
-    top: 435px;
-}
-.exp-time-dot:hover{
-    cursor: pointer;
+.exp-timeline ul li:nth-child(even) .exp-time-box{
+    margin-left: 12%;
 }
 /* experience : inforamtion */
 .exp-time-box{
@@ -232,21 +258,7 @@ h5{
     border: 1px solid #fb56bf;
     border-radius: 10px;
     background: white;
-    padding: 8px 9px 12px 12px;
-    position: absolute;
-}
-.exp-time-box-3{
-    top: 83px;
-    left: 53%;
-}
-.exp-time-box-2{
-    top: 258px;
-    right: 53%;
-    text-align: right;
-}
-.exp-time-box-1{
-    top: 433px;
-    left: 53%;
+    padding: 8px 1% 12px 1.5%;
 }
 .exp-timeline h5{
     letter-spacing: 0.53px;
@@ -272,24 +284,19 @@ h5{
     line-height: 1.8;
 }
 /* experience - event */
-.mouseEvent{
+.exp-time-box:hover{
+    cursor: pointer;
     border: 2px solid #fb56bf;
     background: rgba(255, 192, 203, 0.1);
 }
 /* content : experience : media */
 @media (max-width: 767px){
-    .exp-time-border,
-    .exp-time-dot{
-        left: 20%;
+    .experience{
+        width: 100%;
     }
-    .exp-time-box{
-        left: 23%;
-        width: 200px;
-        width: 55%;
-    }
-    .exp-time-box-2{
+    /* .exp-timeline ul li:nth-child(even){
         text-align: left;
-    }
+    } */
 }
 
 /* content : works */
